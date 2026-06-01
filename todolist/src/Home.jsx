@@ -23,8 +23,8 @@ function Home() {
             <div><h2>No Record</h2></div>
             :
             todos.map(todo => (
-                <div className='task' key={todo?._id}>
-                    <div className='checkbox' onClick={() => handleEdit(todo._id)}>
+                <div className='task'>
+                    <div className='checkbox'>
                         <BsCircleFill className='icon' />
                         <p>{todo?.task}</p>
                     </div>
