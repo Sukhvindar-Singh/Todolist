@@ -20,8 +20,14 @@ function Home() {
             <div><h2>No Record</h2></div>
             :
             todos.map(todo => (
-                <div className='task'>
-                    {todo?.task}
+                <div className='task' key={todo._id}>
+                    <div className='checkbox' onClick={() => handleEdit(todo._id)}>
+                        <BsCircleFill className='icon' />
+                        <p>{todo.task}</p>
+                    </div>
+                    <div>
+                        <span><BsFillrashFill className='icon'/></span>
+                    </div>
                 </div>
             ))
         }
