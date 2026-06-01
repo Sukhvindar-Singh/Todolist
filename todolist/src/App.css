@@ -1,7 +1,6 @@
-{
+* {
     box-sizing: border-box;
 }
-
 
 .home-container {
     display: flex;
@@ -21,10 +20,6 @@
     color: white;
     cursor: pointer;
 }
-
-
-
-
 .task {
     display: flex;
     align-items: center;

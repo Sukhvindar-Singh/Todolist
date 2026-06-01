@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Create from './Create'
 import axios from 'axios'
+import { BsCircleFill, BsFillTrashFill } from 'react-icons/bs'
+
 
 
 function Home() {
@@ -10,6 +12,7 @@ function Home() {
         .then(result => setTodos(result.data))
         .catch(err => console.log(err))
     }, [])
+
   return (
     <div className="home-container">
         <h1>Todo List</h1>
@@ -20,13 +23,13 @@ function Home() {
             <div><h2>No Record</h2></div>
             :
             todos.map(todo => (
-                <div className='task' key={todo._id}>
+                <div className='task' key={todo?._id}>
                     <div className='checkbox' onClick={() => handleEdit(todo._id)}>
                         <BsCircleFill className='icon' />
-                        <p>{todo.task}</p>
+                        <p>{todo?.task}</p>
                     </div>
                     <div>
-                        <span><BsFillrashFill className='icon'/></span>
+                        <span><BsFillTrashFill className='icon'/></span>
                     </div>
                 </div>
             ))
