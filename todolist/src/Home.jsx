@@ -33,7 +33,7 @@ function Home() {
                         <BsFillCheckCircleFill ClassName='icon'></BsFillCheckCircleFill>
                         :<BsCircleFill className='icon' />
                         }
-                        <p>{todo?.task}</p>
+                        <p className={todo.done ? "line_through" : ""}>{todo.task}</p>
                     </div>
                     <div>
                         <span><BsFillTrashFill className='icon'/></span>
