@@ -31,11 +31,16 @@ function Home() {
     return (
         <div className="home-container">
             <h1>Todo List</h1>
+            <div className="counter-panel">
+                <p>Pending: {todos.filter(t => !t.done).length}</p>
+                <p>Completed: {todos.filter(t => t.done).length}</p>
+            </div>
+
             <Create />
             {
                 todos.length === 0 
                 ?
-                <div><h2>No Record</h2></div>
+                <div className="no-record"><h2>No Record Found</h2></div>
                 :
                 todos.map(todo => (
                     <div className='task' key={todo._id}>
@@ -49,7 +54,7 @@ function Home() {
                         <div>
                             <span>
                                 <BsFillTrashFill 
-                                    className='icon'
+                                    className='icon trash-icon'
                                     onClick={() => handleDelete(todo._id)}
                                 />
                             </span>

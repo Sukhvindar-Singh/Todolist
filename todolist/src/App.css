@@ -1,54 +1,170 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #eef6ff; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .home-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 440px;
+    padding: 35px 28px;
+    background-color: #dbeafe;
+    border-radius: 28px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.03);
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1e3a8a;
+    text-align: center;
     width: 100%;
 }
-.create_form input{
-    width: 300px;
-    padding: 10px;
-    border-bottom: 2px solid black;
+
+.counter-panel {
+    display: flex; 
+    gap: 12px; 
+    margin-bottom: 24px; 
+    font-size: 14px; 
+    font-weight: 600;
+    justify-content: center;
+    width: 100%;
+}
+
+.counter-panel p:first-child {
+    color: #2563eb;
+    background-color: rgba(37, 99, 235, 0.08);
+    padding: 6px 14px;
+    border-radius: 12px;
+}
+
+.counter-panel p:last-child {
+    color: #0d9488;
+    background-color: rgba(13, 148, 136, 0.08);
+    padding: 6px 14px;
+    border-radius: 12px;
+}
+
+.create_form {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.create_form input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: 16px;
     outline: none;
+    font-size: 15px;
+    background-color: #ffffff;
+    color: #1e3a8a;
+    transition: all 0.2s ease;
 }
+
+.create_form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
 .create_form button {
-    padding: 10px;
-    background-color: black;
+    padding: 14px 24px;
+    background-color: #2563eb;
     color: white;
+    border: none;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+.create_form button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.02);
+}
+
 .task {
     display: flex;
     align-items: center;
-    width: 345px;
     justify-content: space-between;
-    background-color: black;
-    color: white;
-    height: 35px;
-    padding: 2px 5px 3px 5px;
-    margin-top: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid rgba(37, 99, 235, 0.05);
+    color: #1e3a8a;
+    height: 56px;
+    padding: 0 18px;
+    margin-top: 10px;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.task:hover {
+    transform: translateY(-1px);
+    border-color: #2563eb;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.06);
 }
 
 .checkbox {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    flex: 1;
+}
+
+.icon {
+    margin-right: 12px;
+    font-size: 18px;
+    color: #94a3b8;
+    transition: color 0.2s ease;
+}
+
+.checkbox:hover .icon {
+    color: #2563eb;
+}
+
+.icon[class*="BsFillCheckCircleFill"] {
+    color: #2563eb !important; 
 }
 
 .line_through {
     text-decoration: line-through;
+    color: #94a3b8;
+    opacity: 0.6;
 }
 
-.checkbox .icon {
-    margin-right: 5px;
-    font-size: 15px;
+.task div span {
+    display: flex;
+    align-items: center;
 }
 
-.task div span{
-    margin: 0px 5px 0px 4px
-}
-.task div .icon {
+.trash-icon:hover {
+    color: #ef4444;
+    transform: scale(1.1);
     cursor: pointer;
+}
+
+.no-record {
+    color: #1e3a8a;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 25px;
+    opacity: 0.4;
 }
